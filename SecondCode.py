@@ -1,4 +1,5 @@
 import time
+import datetime
 import random
 
 
@@ -52,6 +53,13 @@ class VehicleConditionCheck:
         print("\nVehicle Condition Summary: ")
         if self.warnings == 0:
             print("Your vehicle is in excellent condition!")
+            print("it is Ready to launch")
+            time.sleep(3)
+            for i in range(10,0,-1):
+                print(i)
+                time.sleep(1)
+                current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') # It gives current time
+            print(f"Titan has Launched Successfully in {current_time}....")
             return True
         elif self.warnings > 0:
             print(f"Your vehicle has {self.warnings} issues. Please address them.")
@@ -98,6 +106,7 @@ class SurvivalChallenge:
         print(f"\nTime's up! Well done {self.player_name}!")
         if self.time_left <= 0:
             print("You survived the challenge!")
+            print("Congratulations!!! Titan Has Launched Successfully...")
         else:
             print("You didn't survive, try again!")
 
