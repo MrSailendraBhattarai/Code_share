@@ -2,7 +2,7 @@ import random
 import time
 
 class Level2:
-    def _init_(self, player_name, time_limit=60):
+    def __init__(self, player_name, time_limit=60):
         """
         Initializes the Level2 class with player name and time limit for the level.
         :param player_name: Name of the player
@@ -60,15 +60,18 @@ class Level2:
             print("You didn't survive, try again!")
 
 # Main execution:
-if _name_ == "_main_":
-    # Ask for player's name
-    player_name = input("Enter your name: ")
+def main():
+    if __name__ == "__main__":
+        # Ask for player's name
+        player_name = input("Enter your name: ")
 
-    # Create an instance of Level2 with the player's name
-    level_2 = Level2(player_name)
+        # Create an instance of Level2 with the player's name
+        level_2 = Level2(player_name)
+        
+        # Display the welcome message
+        level_2.welcom_page()
+
+        # Start the level
+        level_2.start()
     
-    # Display the welcome message
-    level_2.welcom_page()
-
-    # Start the level
-    level_2.start()
+main()
